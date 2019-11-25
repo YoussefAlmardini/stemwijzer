@@ -10,7 +10,7 @@ namespace SA.Controllers
     {
         public static List<Opinion> GetOpinions()
         {
-           var request = DatabaseService.Request("http://145.120.207.142/databaseConnect/getOpinions.php");
+           var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getOpinions.php");
             using (var s = request.GetResponse().GetResponseStream())
             {
                 using (var sr = new StreamReader(s))
