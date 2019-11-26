@@ -6,17 +6,17 @@ using System.IO;
 
 namespace SA.Controllers
 {
-    internal class QuestionsController
+    internal class StandController
     {
-        public static List<Question> GetQuestions()
+        public static List<Stand> GetQuestions()
         {
-            var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getQuestions.php");
+            var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getStands.php");
             using (var s = request.GetResponse().GetResponseStream())
             {
                 using (var sr = new StreamReader(s))
                 {
                     var result = sr.ReadToEnd();
-                    var data = JsonConvert.DeserializeObject<List<Question>>(result);
+                    var data = JsonConvert.DeserializeObject<List<Stand>>(result);
                     return data;
                 }
             }
