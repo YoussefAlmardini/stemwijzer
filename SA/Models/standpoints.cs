@@ -7,9 +7,12 @@ namespace SA.Models
 {
     public class Standpoints
     {
-        public Stand stand { set; get; }
-        public Points point { set; get; }
-        public Party party { set; get; }
+        public int stand_id { get; set; }
+        public int party_id { get; set; }
+        public int hlm_eens_pnt { get; set; }
+        public int eens_pnt { get; set; }
+        public int oneens_pnt { get; set; }
+        public int hlm_oneens_pnt { get; set; }
 
 
     }
