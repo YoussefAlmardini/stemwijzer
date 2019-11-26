@@ -17,10 +17,5 @@ namespace SA
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.Text = OpinionsController.GetOpinions()[0].opinion;
-        }
     }
 }
