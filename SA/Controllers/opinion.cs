@@ -8,7 +8,7 @@ namespace SA.Controllers
 {
     internal class OpinionsController
     {
-        public static List<Opinion> GetOpinions()
+        public static List<Stand> GetOpinions()
         {
            var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getOpinions.php");
             using (var s = request.GetResponse().GetResponseStream())
@@ -16,7 +16,7 @@ namespace SA.Controllers
                 using (var sr = new StreamReader(s))
                 {
                     var result = sr.ReadToEnd();
-                    var data = JsonConvert.DeserializeObject<List<Opinion>>(result);
+                    var data = JsonConvert.DeserializeObject<List<Stand>>(result);
                     return data;
                 }
             }
