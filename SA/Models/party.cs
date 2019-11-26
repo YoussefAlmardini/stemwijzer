@@ -7,6 +7,7 @@ namespace SA.Models
     public class Party
     {
         public int ID { set; get; }
+        public string abbreviation { set; get; }
         public string name { set; get; }
         public string leader { set; get; }
         public int parlement_chairs { set; get; }
