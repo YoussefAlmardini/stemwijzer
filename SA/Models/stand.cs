@@ -5,10 +5,10 @@ using System.Text;
 
 namespace SA.Models
 {
-    public class Opinion
+    public class Stand
     {
 
         public int ID { set; get; }
-        public string opinion { set; get; }
+        public string stand { set; get; }
     }
 }
