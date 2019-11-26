@@ -8,7 +8,7 @@ namespace SA.Controllers
 {
     internal class StandController
     {
-        public static List<Stand> GetQuestions()
+        public static List<Stand> GetStands()
         {
             var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getStands.php");
             using (var s = request.GetResponse().GetResponseStream())

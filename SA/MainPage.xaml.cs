@@ -20,12 +20,6 @@ namespace SA
         private void Button_Clicked(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            //btn.Text = OpinionsController.GetOpinions()[0].opinion;
-            User user = new User();
-            if (user.IsAdult)
-            {
-                user.Session.Start();
-            }
         }
     }
 }

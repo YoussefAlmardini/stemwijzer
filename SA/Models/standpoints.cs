@@ -7,10 +7,9 @@ namespace SA.Models
 {
     public class Standpoints
     {
-        public Question stand { set; get; }
+        public Stand stand { set; get; }
         public Points point { set; get; }
         public Party party { set; get; }
-        public Opinion opinion { set; get; }
 
 
     }
