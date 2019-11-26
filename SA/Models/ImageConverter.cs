@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace SA.Models
 {
-    public class ImageConverter : IValueConverter
+     public class ImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

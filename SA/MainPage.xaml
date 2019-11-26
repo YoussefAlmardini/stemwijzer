@@ -7,11 +7,11 @@
              mc:Ignorable="d"
              x:Class="SA.MainPage"
              BackgroundColor="#4269C3">
-            <ContentPage.Resources>
+            <!-- <ContentPage.Resources>
                 <ResourceDictionary>
                     <converters:ImageConverter x:Key="ImageConverter" />
                 </ResourceDictionary>
-            </ContentPage.Resources>
+            </ContentPage.Resources> -->
 
     <!-- // Set a grid with heigt and width -->
     <Grid>
@@ -32,10 +32,10 @@
         </Grid.ColumnDefinitions>
         <!-- Place new controls here -->
         <!--GRID ROW 0-->
-        <Image 
+        <!-- <Image 
             Source="{Binding Icon_map-political, Converter={StaticResource ImageFileToImageSourceConverter}}" 
             Grid.Row="0" Grid.Column="0"
-            />
+            /> -->
         <Label
             Text="Stemwijzer" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
             Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" TextColor="White"
