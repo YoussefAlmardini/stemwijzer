@@ -19,13 +19,16 @@ namespace SA.Models
 
     public class UserSession
     {
-        public List<Points> points { get; set; }
-
+        public List<UserOpinion> UserOpinion;
         public UserSession() { }
         public void Start()
         {
-            points = new List<Points>();
+            UserOpinion = new List<UserOpinion>();
+        }
 
+        public void AddStandPoint(UserOpinion opinion)
+        {
+            this.UserOpinion.Add(opinion);
         }
     }
 }
