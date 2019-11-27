@@ -3,9 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:SA.Models"
              mc:Ignorable="d"
              x:Class="SA.MainPage"
-             BackgroundColor="DarkBlue">
+             BackgroundColor="#4269C3">
+            <!-- <ContentPage.Resources>
+                <ResourceDictionary>
+                    <converters:ImageConverter x:Key="ImageConverter" />
+                </ResourceDictionary>
+            </ContentPage.Resources> -->
 
     <!-- // Set a grid with heigt and width -->
     <Grid>
@@ -26,44 +32,48 @@
         </Grid.ColumnDefinitions>
         <!-- Place new controls here -->
         <!--GRID ROW 0-->
+        <!-- <Image 
+            Source="{Binding Icon_map-political, Converter={StaticResource ImageFileToImageSourceConverter}}" 
+            Grid.Row="0" Grid.Column="0"
+            /> -->
         <Label
             Text="Stemwijzer" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
             Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" TextColor="White"
         />
         <!--GRID ROW 1-->
         <Image 
-            Source=""
+            Source="./Images/cda.png"
             Grid.Row="1" Grid.Column="1"
             />
         <Image
-            Source=""
+            Source="./Images/pvda.png"
             Grid.Row="1" Grid.Column="3"
             />
         <!--GRID ROW 2-->
         <!-- Put a function to check off the checkbox is checked CheckedChanged=""  -->
         <Image 
-            Source=""
+            Source="Images/groenlinks.png"
             Grid.Row="2" Grid.Column="1"
             />
         <Image 
-            Source=""
+            Source="Images/fvd.png"
             Grid.Row="2" Grid.Column="3"
             />
         <!--GRID ROW 3-->
         <CheckBox
-            Grid.Row="3" Grid.ColumnSpan="1" HorizontalOptions="Center" Color="White"
+            Grid.Row="3" Grid.ColumnSpan="1" HorizontalOptions="Center" Color="White" 
         />
 
         <Label 
             Text="Ik ben 18 jaar of ouder."
             HorizontalOptions="Center"  VerticalOptions="Center"
-            Grid.Row="3"  Grid.ColumnSpan="3" Grid.Column="1" TextColor="White"
+            Grid.Row="3"  Grid.ColumnSpan="3" Grid.Column="1" TextColor="White" 
             />
 
         <!--GRID ROW 4-->
         <Button
-            Text="Start"  Clicked="Button_Clicked"
-            Grid.Column="2" Grid.Row="4"  Grid.ColumnSpan="1" BackgroundColor="Green"
+            Text="Start"  
+            Grid.Column="2" Grid.Row="4"  Grid.ColumnSpan="1" BackgroundColor="#6CB419"
             CornerRadius="25"
         />
 
