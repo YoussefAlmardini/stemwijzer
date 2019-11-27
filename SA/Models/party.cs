@@ -13,6 +13,5 @@ namespace SA.Models
         public int parlement_chairs { set; get; }
         public int senate_chairs { set; get; }
 
-
     }
 }

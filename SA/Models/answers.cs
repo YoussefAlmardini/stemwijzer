@@ -4,8 +4,10 @@ using System.Text;
 
 namespace SA.Models
 {
-    public class Advice
+    public class Answer
     {
-        public int percentage { set; get; }
+        
     }
+
+
 }

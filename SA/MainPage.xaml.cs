@@ -3,6 +3,8 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using SA.Models;
 using SA.Controllers;
+using SA.Views.QuestionView;
+using System.Collections.Generic;
 
 namespace SA
 {
@@ -19,8 +21,13 @@ namespace SA
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            btn.Text = OpinionsController.GetOpinions()[0].stand;
+            User user = new User();
+            user.IsAdult = true;
+            if (user.IsAdult)
+            {
+                List<Stand> liveStands = StandController.GetStands();
+                Navigation.PushAsync(new QuestionView(liveStands,user));
+            }
         }
     }
 }

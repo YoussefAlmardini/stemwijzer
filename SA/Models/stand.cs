@@ -10,5 +10,10 @@ namespace SA.Models
 
         public int ID { set; get; }
         public string stand { set; get; }
+
+        public override string ToString()
+        {
+            return this.stand;
+        }
     }
 }
