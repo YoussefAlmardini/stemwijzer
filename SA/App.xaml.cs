@@ -3,6 +3,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SA.Models;
+using SA.Views;
 
 namespace SA
 {
@@ -12,17 +13,17 @@ namespace SA
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new ResultsView());
         }
         public App(string pathName)
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new ResultsView());
         }
 
         protected override void OnStart()
         {
-            
+
         }
 
         protected override void OnSleep()

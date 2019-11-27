@@ -13,32 +13,32 @@ namespace SA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ResultsView : ContentPage
     {
+        SmtpClient client = new SmtpClient();
+        string host = "smtp.gmail.com";
+        int port = 587;
+        bool enableSsl = true;
+        string credentialUsername = "ertanarslan9101@gmail.com";
+        string credentialPassword = ""; // Wachtwoord
         public ResultsView()
         {
             InitializeComponent();
+            initSMTPClient(host, port, enableSsl, credentialUsername, credentialPassword);
         }
 
-        private void buildMail(string emailAddress)
+        private bool initSMTPClient(string host, int port, bool enableSsl, string credentialUsername, string credentialPassword)
         {
             try
             {
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-                mail.From = new MailAddress("ertanarslan9101@gmail.com");
-                mail.To.Add("525889@edu.rocmn.nl");
-                mail.Subject = "Test Mail";
-                mail.Body = "This is for testing SMTP mail from GMAIL";
-
-                SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("ertanarslan9101@gmail.com", "KravatIleYelek)!@$");
-                SmtpServer.EnableSsl = true;
-
-                SmtpServer.Send(mail);
+                client.Host = host;
+                client.Port = port;
+                client.EnableSsl = enableSsl;
+                client.Credentials = new NetworkCredential(credentialUsername, credentialPassword);
+                client.SendCompleted += Client_SendCompleted;
+                return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine(ex.ToString());
+                return false;
             }
         }
 
@@ -46,24 +46,22 @@ namespace SA.Views
         {
             try
             {
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                client.EnableSsl = true;
-                client.Timeout = 10000;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("ertanarslan9101@gmail.com", "KravatIleYelek)!@$");
                 MailMessage msg = new MailMessage();
-                msg.To.Add("525889@edu.rocmn.nl");
+                msg.To.Add("wofeyay207@xmail2.net");
+                msg.Subject = "Uw stemadvies";
+                msg.Body = "Geachte heer/mevrouw, Hoi :)";
                 msg.From = new MailAddress("ertanarslan9101@gmail.com");
-                msg.Subject = "Advies";
-                msg.Body = "U heeft een nieuwe advies gekregen.";
-                client.Send(msg);
-                Console.WriteLine("MAIL: SUCCESVOL");
+                client.SendMailAsync(msg);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("CATCH: " + ex.Message);
             }
+        }
+
+        private void Client_SendCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            DisplayAlert("Melding", "De mail is verzonden", "OK");
         }
     }
 }
