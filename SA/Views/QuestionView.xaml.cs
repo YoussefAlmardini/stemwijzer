@@ -15,6 +15,8 @@ namespace SA.Views.QuestionView
         public List<Stand> Stands;
         public int indexer = 0;
         public User User;
+        bool IsAnswerd = false;
+
         public QuestionView(List<Stand> stands,User user)
         {
             InitializeComponent();
@@ -34,23 +36,19 @@ namespace SA.Views.QuestionView
             switch (target.Text)
             {
                 case "Eens":
-                    userOpinion.userOpinion = "eens_pnt";
-                    User.Session.AddStandPoint(userOpinion);
+                    SetAnswer("eens_pnt", userOpinion);
                     break;
 
                 case "Helemaal eens":
-                    userOpinion.userOpinion = "hlm_eens_pnt";
-                    User.Session.AddStandPoint(userOpinion);
+                    SetAnswer("hlm_eens_pnt", userOpinion);
                     break;
 
                 case "Oneens":
-                    userOpinion.userOpinion = "oneens_pnt";
-                    User.Session.AddStandPoint(userOpinion);
+                    SetAnswer("oneens_pnt", userOpinion);
                     break;
 
                 case "Helemaal oneens":
-                    userOpinion.userOpinion = "hlm_oneens_pnt";
-                    User.Session.AddStandPoint(userOpinion);
+                    SetAnswer("hlm_oneens_pnt", userOpinion);
                     break;
 
             }
@@ -62,6 +60,20 @@ namespace SA.Views.QuestionView
 
         }
 
+        private void SetAnswer(string answer,UserOpinion op)
+        {
+            op.userOpinion = answer;
+
+            if (User.Session.IsExist(op.stand))
+            {
+                User.Session.Update(op);
+            }
+            else
+            {
+                User.Session.AddStandPoint(op);
+            }
+            IsAnswerd = true;
+        }
        
         private void ViewPreviousQuestion(object sender, EventArgs e)
         {
@@ -70,7 +82,17 @@ namespace SA.Views.QuestionView
 
         private void ViewNextQuestion(object sender, EventArgs e)
         {
-            this.NextStand();
+
+            if (IsAnswerd)
+            {
+                this.NextStand();
+                IsAnswerd = false;
+            }
+            else
+            {
+                DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
+            }
+                
         }
 
         private void Print(Label output,Stand stand)

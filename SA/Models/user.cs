@@ -21,6 +21,7 @@ namespace SA.Models
     {
         public List<UserOpinion> UserOpinion;
         public UserSession() { }
+
         public void Start()
         {
             UserOpinion = new List<UserOpinion>();
@@ -29,6 +30,32 @@ namespace SA.Models
         public void AddStandPoint(UserOpinion opinion)
         {
             this.UserOpinion.Add(opinion);
+        }       
+
+        public void Update(UserOpinion opinion)
+        {
+            for (int i = 0; i < UserOpinion.Count; i++)
+            {
+                if (UserOpinion[i].stand == opinion.stand)
+                {
+                    UserOpinion[i].userOpinion = opinion.userOpinion;
+                }
+            }
+        }
+
+        public bool IsExist(Stand currentStand)
+        {
+            bool condition = false;
+
+            for(int i = 0; i < UserOpinion.Count; i++)
+            {
+                if(UserOpinion[i].stand == currentStand)
+                {
+                    condition = true;
+                }
+            }
+
+            return condition;
         }
     }
 }
