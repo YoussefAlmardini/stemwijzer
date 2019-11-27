@@ -42,7 +42,7 @@
         />
         <!--GRID ROW 1-->
         <Image 
-            Source="https://upload.wikimedia.org/wikipedia/commons/3/38/FvD.png"
+            Source="/Images/cda.png"
             Grid.Row="1" Grid.Column="1"
             />
         <Image

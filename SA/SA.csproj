@@ -22,6 +22,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\cda.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\cda.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="LiveXAML" Version="2.1.73" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />

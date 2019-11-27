@@ -25,7 +25,8 @@ namespace SA
             if (user.IsAdult)
             {
                 List<Stand> liveStands = StandController.GetStands();
-                Navigation.PushAsync(new QuestionView(liveStands,user));
+                Navigation.PushAsync(new QuestionView(liveStands, user));
+
             }
             else
             {
