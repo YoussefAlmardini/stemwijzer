@@ -12,7 +12,7 @@ namespace SA.Controllers
     {
         public static List<Party> GetAllParties()
         {
-            var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getAllParties.php");
+            var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getParties.php");
             using (var s = request.GetResponse().GetResponseStream())
             {
                 using (var sr = new StreamReader(s))

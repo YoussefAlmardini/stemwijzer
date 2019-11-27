@@ -12,18 +12,17 @@ namespace SA
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
         public App(string pathName)
         {
             InitializeComponent();
-            MainPage = new MainPage();
-            App.PathName = pathName;
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
         {
-
+            
         }
 
         protected override void OnSleep()
