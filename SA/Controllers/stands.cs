@@ -6,11 +6,11 @@ using System.IO;
 
 namespace SA.Controllers
 {
-    internal class OpinionsController
+    internal class StandController
     {
-        public static List<Stand> GetOpinions()
+        public static List<Stand> GetStands()
         {
-           var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getOpinions.php");
+            var request = DatabaseService.Request("http://520351.student4a7.ao-ica.nl/api/getStands.php");
             using (var s = request.GetResponse().GetResponseStream())
             {
                 using (var sr = new StreamReader(s))
