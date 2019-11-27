@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:SA.Models"
+             xmlns:local="clr-namespace:SA.Models"
              mc:Ignorable="d"
              x:Class="SA.MainPage"
              BackgroundColor="#4269C3">
@@ -42,21 +43,21 @@
         />
         <!--GRID ROW 1-->
         <Image 
-            Source="/Images/cda.png"
+            Source="{local:ImageResourceExtenstion ResourceID=SA.Images.cda.png}"
             Grid.Row="1" Grid.Column="1"
             />
         <Image
-            Source="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CDA_logo.svg/1200px-CDA_logo.svg.png"
+             Source="{local:ImageResourceExtenstion ResourceID=SA.Images.fvd.png}"
             Grid.Row="1" Grid.Column="3"
             />
         <!--GRID ROW 2-->
         <!-- Put a function to check off the checkbox is checked CheckedChanged=""  -->
         <Image 
-            Source="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/GROENLINKS-LOGO-COMPACT-RGB_%281%29.png/1200px-GROENLINKS-LOGO-COMPACT-RGB_%281%29.png"
+             Source="{local:ImageResourceExtenstion ResourceID=SA.Images.groenlinks.png}"
             Grid.Row="2" Grid.Column="1"
             />
         <Image 
-            Source="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/PvdA_Logo_small.svg/1200px-PvdA_Logo_small.svg.png"
+               Source="{local:ImageResourceExtenstion ResourceID=SA.Images.pvda.png}"
             Grid.Row="2" Grid.Column="3"
             />
         <!--GRID ROW 3-->

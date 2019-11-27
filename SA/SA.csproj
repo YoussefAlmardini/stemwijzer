@@ -23,10 +23,18 @@
 
   <ItemGroup>
     <None Remove="Images\cda.png" />
+    <None Remove="Images\fvd.png" />
+    <None Remove="Images\groenlinks.png" />
+    <None Remove="Images\Icon_map-political.png" />
+    <None Remove="Images\pvda.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\cda.png" />
+    <EmbeddedResource Include="Images\cda.png" />
+    <EmbeddedResource Include="Images\fvd.png" />
+    <EmbeddedResource Include="Images\groenlinks.png" />
+    <EmbeddedResource Include="Images\Icon_map-political.png" />
+    <EmbeddedResource Include="Images\pvda.png" />
   </ItemGroup>
 
   <ItemGroup>

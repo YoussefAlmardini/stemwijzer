@@ -47,8 +47,8 @@
             BorderRadius="5"
             BorderColor="#000000" Text="Helemaal oneens"   Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="1"  Clicked="SaveAnswer" x:Name="hlm_oneens_pnt"/>
 
-        <Button Text="vorige"    Grid.Row="5" Grid.ColumnSpan="1" Grid.Column="1" Clicked="ViewPreviousQuestion"/>
-        <Button Text="volgende"   Grid.Row="5" Grid.ColumnSpan="1" Grid.Column="3" Clicked="ViewNextQuestion"/>
+        <Button Text="Vorige"    Grid.Row="5" Grid.ColumnSpan="1" Grid.Column="1" Clicked="ViewPreviousQuestion"/>
+        <Button Text="Volgende"   x:Name="volgende" Grid.Row="5" Grid.ColumnSpan="1" Grid.Column="3" Clicked="ViewNextQuestion"/>
 
     </Grid>
 </ContentPage>
