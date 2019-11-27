@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +14,12 @@ namespace SA.Views
         public ResultsView()
         {
             InitializeComponent();
+        }
+
+        private void resetApplication(object sender, EventArgs e)
+        {
+            Application.Current.Properties.Clear();
+            (Application.Current).MainPage = new NavigationPage(new MainPage());
         }
     }
 }

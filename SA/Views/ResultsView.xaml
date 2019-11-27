@@ -7,9 +7,12 @@
              x:Class="SA.Views.ResultsView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button
+                Text="Reset app"
+                Grid.Column="2" Grid.Row="4"  Grid.ColumnSpan="1" BackgroundColor="#6CB419"
+                CornerRadius="25"
+                Clicked="resetApplication"
+            />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
