@@ -1,22 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Reflection;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace SA.Models
 {
-     public class ImageConverter : IValueConverter
+    class ImageResourceExtension : IMarkupExtension
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public string ResourceID { get; set; }
+        public object ProvideValue(IServiceProvider serviceProvider)
         {
-            var path = (string)value;
-            return ImageSource.FromFile(path);
+            if (ResourceID == null)
+            {
+                return null;
+            }
+            // Do your translation lookup here, using whatever method you require 
+            var imageSource = ImageSource.FromResource(ResourceID, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+
+            return imageSource;
+
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

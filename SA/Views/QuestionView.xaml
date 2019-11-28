@@ -25,27 +25,10 @@
 
         <Label Text="Question" Grid.Row="0"  Grid.ColumnSpan="3" Grid.Column="2" x:Name="Stand"/>
 
-        <Button 
-            Text="Eens" 
-            Grid.Row="1" 
-            Grid.ColumnSpan="3" 
-            Grid.Column="1" 
-            Clicked="SaveAnswer" 
-            x:Name="eens_pnt"
-            BorderWidth="2"
-            BorderRadius="5"
-            BorderColor="#000000"
-        />
-        <Button    BorderWidth="2"
-            BorderRadius="5"
-            BorderColor="#000000" Text="Helemaal eens"   Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1"  Clicked="SaveAnswer" x:Name="hlm_eens_pnt"/>
-        <Button    BorderWidth="2"
-            BorderRadius="5"
-            BorderColor="#000000"
-                   Text="Oneens"    Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="1"  Clicked="SaveAnswer" x:Name="oneens_pnt"/>
-        <Button    BorderWidth="2"
-            BorderRadius="5"
-            BorderColor="#000000" Text="Helemaal oneens"   Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="1"  Clicked="SaveAnswer" x:Name="hlm_oneens_pnt"/>
+        <Button Text="Eens" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Clicked="SaveAnswer" x:Name="eens_pnt" BorderWidth="2" BorderRadius="5" BorderColor="#000000"/>
+        <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" Text="Helemaal eens" Clicked="SaveAnswer" x:Name="hlm_eens_pnt"/>
+        <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="1" Text="Oneens" Clicked="SaveAnswer" x:Name="oneens_pnt"/>
+        <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="1" Text="Helemaal oneens" Clicked="SaveAnswer" x:Name="hlm_oneens_pnt"/>
 
         <Button Text="Vorige"    Grid.Row="5" Grid.ColumnSpan="1" Grid.Column="1" Clicked="ViewPreviousQuestion"/>
         <Button Text="Volgende"   x:Name="volgende" Grid.Row="5" Grid.ColumnSpan="1" Grid.Column="3" Clicked="ViewNextQuestion"/>
