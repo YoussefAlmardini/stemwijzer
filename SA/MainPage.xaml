@@ -8,13 +8,8 @@
              mc:Ignorable="d"
              Title="Stemwijzer"
              x:Class="SA.MainPage"
-             BackgroundColor="#4269C3">
-            
-            <!-- <ContentPage.Resources>
-                <ResourceDictionary>
-                    <converters:ImageConverter x:Key="ImageConverter" />
-                </ResourceDictionary>
-            </ContentPage.Resources> -->
+             BackgroundColor="#4269C3"
+             NavigationPage.HasNavigationBar="false">
 
     <!-- // Set a grid with heigt and width -->
     <Grid>
@@ -37,11 +32,6 @@
         </Grid.ColumnDefinitions>
         <!-- Place new controls here -->
         <!--GRID ROW 0-->
-        <!-- <Image 
-            Source="{Binding Icon_map-political, Converter={StaticResource ImageFileToImageSourceConverter}}" 
-            Grid.Row="0" Grid.Column="0"
-            /> -->
-        
         <!--GRID ROW 1-->
         <Image 
             Source="{local:ImageResource ResourceID=SA.Images.fvd.png}"

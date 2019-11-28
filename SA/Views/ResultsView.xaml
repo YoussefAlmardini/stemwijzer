@@ -5,74 +5,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SA.Views.ResultsView"
-             BackgroundColor="#4269C3">
-
-    <ContentPage.Content>
-        <StackLayout>
-            <!-- Place new controls here -->
-            <!--GRID ROW 0-->
-            <!-- <Image 
-            Source="{Binding Icon_map-political, Converter={StaticResource ImageFileToImageSourceConverter}}" 
-            Grid.Row="0" Grid.Column="0"
-            /> -->
-            <Label
-            Text="Op basis van uw antwoorden" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-             TextColor="White" FontAttributes="Bold" FontSize="Title"
-
-            />
-            <!--GRID ROW 1-->
-            <StackLayout>
-                <BoxView
-                BackgroundColor="#ffffff" Opacity="0.5" Scale="1" ScaleY="4" Margin="0,100,0,0" >
-
-                </BoxView>
-                <Label Text="Uw beste keuze"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                <Label Text="__partij_naam__"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                <Label Text="__volledig_partij_naam__"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                <Label Text="partijleider :"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                <Label Text="__partijleider__"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                <Label Text="Zetels tweedekamer :"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                <Label Text="__Zetels tweedekamer__"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                <Label Text="Zetel eerstekamer"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                <Label Text="__zetels_eerstekamer__"  FontSize="14" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start"/>
-                
-            </StackLayout>
-
-
-            <!--GRID ROW 2-->
-            <!-- Put a function to check off the checkbox is checked CheckedChanged=""  -->
-            <BoxView
-            BackgroundColor="#ffffff" Opacity="0.5" Scale="1" ScaleY="4" Margin="0,130,0,0" 
-            />
-            <Image 
-            Source="Images/fvd.png"
-            
-            />
-            <!--GRID ROW 3-->
-            <BoxView
-            BackgroundColor="#ffffff" Opacity="0.5" Scale="1" ScaleY="4" Margin="0,124,0,0" 
-            />
-
-
-
-            <!--GRID ROW 4-->
-
-
-
-            <!--GRID ROW 5-->
-            <StackLayout Orientation="Horizontal" Margin="0,70,0,0" >
-                        <Button
-                    Text="Opnieuw beginnen"  
-                    BackgroundColor="#6CB419" Opacity="0.8" MinimumWidthRequest="-1" 
-            
-                />
-                    <Button
-                    Text="Advies via email"  
-                    BackgroundColor="#6CB419" Opacity="0.8"
-            
-                />  
+             NavigationPage.HasNavigationBar="false"
+            >
+   
+        <ContentPage.Content>
+                <StackLayout BackgroundColor="PowderBlue">
+                    <Label Text="Op basis van uw antwoorden" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" Opacity="50" FontFamily="Malgun Gothic" FontSize="20" Margin="0,50,0,0"/>
+                <StackLayout Orientation="Horizontal">
+                        <Label Text="Uw beste keuze" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                        <Label Text="Partij1" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Partij naam" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                        <Label Text="Partijleider" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                             <Image Source="" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Zetels tweedekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                            <Label Text="Zetels eerstekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Match" HorizontalOptions="Start" Margin="0,0,20,0"></Label>
+                    <ProgressBar Margin="0,0,20,0"></ProgressBar>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Opnieuw beginnen" BackgroundColor="#6CB419" Margin="20,0,20,0" ></Button>
+                <Button Text="Advies via e-mail" BackgroundColor="#6CB419" Margin="20,0,20,0"></Button>
             </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+            
+        </ContentPage.Content>
 
 </ContentPage>
