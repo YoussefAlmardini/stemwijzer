@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SA.Models" 
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:SA.Models"
              mc:Ignorable="d"
+             Title="Stemwijzer"
              x:Class="SA.MainPage"
              BackgroundColor="#4269C3">
+            
             <!-- <ContentPage.Resources>
                 <ResourceDictionary>
                     <converters:ImageConverter x:Key="ImageConverter" />
@@ -19,9 +22,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -29,6 +33,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+
         </Grid.ColumnDefinitions>
         <!-- Place new controls here -->
         <!--GRID ROW 0-->
@@ -36,46 +41,46 @@
             Source="{Binding Icon_map-political, Converter={StaticResource ImageFileToImageSourceConverter}}" 
             Grid.Row="0" Grid.Column="0"
             /> -->
-        <Label
-            Text="Stemwijzer" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-            Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" TextColor="White"
-        />
+        
         <!--GRID ROW 1-->
         <Image 
-            Source="./Images/cda.png"
-            Grid.Row="1" Grid.Column="1"
+            Source="{local:ImageResource ResourceID=SA.Images.fvd.png}"
+            Grid.Row="0" Grid.Column="1"
             />
         <Image
-            Source="./Images/pvda.png"
-            Grid.Row="1" Grid.Column="3"
+            Source="{local:ImageResource ResourceID=SA.Images.cda.png}"
+            Grid.Row="0" Grid.Column="3"
             />
         <!--GRID ROW 2-->
         <!-- Put a function to check off the checkbox is checked CheckedChanged=""  -->
         <Image 
-            Source="Images/groenlinks.png"
-            Grid.Row="2" Grid.Column="1"
+            Source="{local:ImageResource ResourceID=SA.Images.groenlinks.png}"
+            Grid.Row="1" Grid.Column="1"
             />
         <Image 
-            Source="Images/fvd.png"
-            Grid.Row="2" Grid.Column="3"
+            Source="{local:ImageResource ResourceID=SA.Images.pvda.png}"
+            Grid.Row="1" Grid.Column="3"
             />
         <!--GRID ROW 3-->
-        <CheckBox
-            Grid.Row="3" Grid.ColumnSpan="1" HorizontalOptions="Center" Color="White" 
-        />
-
-        <Label 
-            Text="Ik ben 18 jaar of ouder."
-            HorizontalOptions="Center"  VerticalOptions="Center"
-            Grid.Row="3"  Grid.ColumnSpan="3" Grid.Column="1" TextColor="White" 
+        <StackLayout Grid.Row="4" Grid.ColumnSpan="5" HorizontalOptions="Center" Orientation="Horizontal">
+            <CheckBox
+                Color="White" CheckedChanged="OnCheck"
             />
 
+            <Label 
+                Text="Ik ben 16 jaar of ouder."
+                VerticalOptions="Center"
+                TextColor="White" 
+                />
+            
+        </StackLayout>
         <!--GRID ROW 4-->
-        <Button
-            Text="Start"  
-            Grid.Column="2" Grid.Row="4"  Grid.ColumnSpan="1" BackgroundColor="#6CB419"
-            CornerRadius="25"
-        />
+        <StackLayout Grid.Row="5" Grid.ColumnSpan="5" HorizontalOptions="Center" Orientation="Horizontal">
+            <Button Text="Start" Grid.Column="2" Grid.Row="1"  Grid.ColumnSpan="3" BackgroundColor="#6CB419" 
+                        CornerRadius="10" Clicked="Button_Clicked"
+                />
+
+        </StackLayout>
 
     </Grid>
 </ContentPage>
