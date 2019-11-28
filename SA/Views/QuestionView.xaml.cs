@@ -15,6 +15,9 @@ namespace SA.Views.QuestionView
         public List<Stand> Stands;
         public int indexer = 0;
         public User User;
+        bool IsAnswerd = false;
+        Color ActiveButtonColor = Color.FromRgb(66, 105, 195);
+
         public QuestionView(List<Stand> stands,User user)
         {
             InitializeComponent();
@@ -22,35 +25,34 @@ namespace SA.Views.QuestionView
             this.User = user;
             Stand.Text = Stands[0].stand;
             this.User.Session.Start();
+            this.ResetLayout();
         }
 
         private void SaveAnswer(object sender, EventArgs e)
         {
+            this.ResetLayout();
             Button target = (Button)sender;
+            target.BackgroundColor = ActiveButtonColor;
             UserOpinion userOpinion = new UserOpinion();
             userOpinion.stand = Stands[indexer];
 
-
+            
             switch (target.Text)
             {
                 case "Eens":
-                    userOpinion.userOpinion = "eens_pnt";
-                    User.Session.AddStandPoint(userOpinion);
+                    SetAnswer("eens_pnt", userOpinion);
                     break;
 
                 case "Helemaal eens":
-                    userOpinion.userOpinion = "hlm_eens_pnt";
-                    User.Session.AddStandPoint(userOpinion);
+                    SetAnswer("hlm_eens_pnt", userOpinion);
                     break;
 
                 case "Oneens":
-                    userOpinion.userOpinion = "oneens_pnt";
-                    User.Session.AddStandPoint(userOpinion);
+                    SetAnswer("oneens_pnt", userOpinion);
                     break;
 
                 case "Helemaal oneens":
-                    userOpinion.userOpinion = "hlm_oneens_pnt";
-                    User.Session.AddStandPoint(userOpinion);
+                    SetAnswer("hlm_oneens_pnt", userOpinion);
                     break;
 
             }
@@ -58,19 +60,79 @@ namespace SA.Views.QuestionView
 
         private void SaveAdvice()
         {
-            //TODO Confirm Continue
-
+            Navigation.PushAsync(new ResultsView(User));
         }
 
+        private void SetAnswer(string answer,UserOpinion op)
+        {
+            op.userOpinion = answer;
+
+            if (User.Session.IsExist(op.stand))
+            {
+                User.Session.Update(op);
+            }
+            else
+            {
+                User.Session.AddStandPoint(op);
+            }
+            IsAnswerd = true;
+        }
        
         private void ViewPreviousQuestion(object sender, EventArgs e)
         {
-            this.PreviousStand();
+
+            volgende.Text = "Volgende";
+
+            if (indexer != 0)
+            {
+                this.PreviousStand();
+                this.ResetLayout();
+                this.ValidateIsAnswerd();
+                this.CheckAnswer();
+            }
         }
 
-        private void ViewNextQuestion(object sender, EventArgs e)
+        private async void ViewNextQuestion(object sender, EventArgs e)
         {
-            this.NextStand();
+            Button bt = (Button)sender;
+            if(bt.Text == "Uitslag")
+            {
+                if (IsAnswerd)
+                {
+                    var confirm = await DisplayAlert("sure", "wil jij doorgaan?", "ja zeker", "cancel");
+                    if (confirm)
+                    {
+                        this.SaveAdvice();
+                    }
+                }
+                else
+                {
+                    DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
+                }
+               
+            }
+            else
+            {
+                if (IsAnswerd)
+                {
+
+                    this.NextStand();
+                    if (indexer == Stands.Count - 1)
+                    {
+                        bt.Text = "Uitslag";
+                    }
+                    this.ResetLayout();
+                    this.ValidateIsAnswerd();
+                    this.CheckAnswer();
+                }
+                else
+                {
+                    DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
+                }
+            }
+
+           
+                
         }
 
         private void Print(Label output,Stand stand)
@@ -81,12 +143,7 @@ namespace SA.Views.QuestionView
         private void NextStand()
         {
             indexer++;
-            if (indexer == Stands.Count)
-            {
-                indexer--;
-                this.SaveAdvice();
-            }
-            else Print(Stand, Stands[indexer]);
+            Print(Stand, Stands[indexer]);
         }
 
         private void PreviousStand()
@@ -97,6 +154,34 @@ namespace SA.Views.QuestionView
                 Stand.Text = Stands[indexer].stand;
             }
             else indexer--; Print(Stand, Stands[indexer]);
+        }
+        private void CheckAnswer()
+        {
+            if (User.Session.UserOpinion.Count > 0)
+            {
+                if (IsAnswerd)
+                {
+                    string controlName = User.Session.UserOpinion[indexer].userOpinion;
+                    this.FindByName<Button>(controlName).BackgroundColor = ActiveButtonColor;
+                }
+            }
+        }
+        private void ValidateIsAnswerd()
+        {
+            if (User.Session.IsExist(Stands[indexer])) {
+                IsAnswerd = true;
+            }
+            else
+            {
+                IsAnswerd = false;
+            }
+        }
+        private void ResetLayout()
+        {
+            eens_pnt.BackgroundColor = Color.White;
+            hlm_eens_pnt.BackgroundColor = Color.White;
+            hlm_oneens_pnt.BackgroundColor = Color.White;
+            oneens_pnt.BackgroundColor = Color.White;
         }
     }
 }

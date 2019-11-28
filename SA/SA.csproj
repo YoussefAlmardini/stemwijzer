@@ -18,6 +18,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\opinion.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\cda.png" />
+    <None Remove="Images\fvd.png" />
+    <None Remove="Images\groenlinks.png" />
+    <None Remove="Images\Icon_map-political.png" />
+    <None Remove="Images\pvda.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\cda.png" />
+    <EmbeddedResource Include="Images\fvd.png" />
+    <EmbeddedResource Include="Images\groenlinks.png" />
+    <EmbeddedResource Include="Images\Icon_map-political.png" />
+    <EmbeddedResource Include="Images\pvda.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="LiveXAML" Version="2.1.73" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
