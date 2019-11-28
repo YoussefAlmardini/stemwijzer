@@ -31,8 +31,8 @@
 
         <Label Text="Question" Grid.Row="1" Grid.ColumnSpan="6" Grid.Column="1" x:Name="Stand" TextColor="White" FontFamily="Malgun Gothic" HorizontalOptions="Center" Margin="0"/>
 
-        <Button Text="Eens" Grid.Row="2" Grid.ColumnSpan="6" Grid.Column="1" Clicked="SaveAnswer" x:Name="eens_pnt" BorderWidth="2" BorderRadius="5" BorderColor="#000000"/>
-        <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="3" Grid.ColumnSpan="6" Grid.Column="1" Text="Helemaal eens" Clicked="SaveAnswer" x:Name="hlm_eens_pnt"/>
+        <Button Text="Eens" Grid.Row="3" Grid.ColumnSpan="6" Grid.Column="1" Clicked="SaveAnswer" x:Name="eens_pnt" BorderWidth="2" BorderRadius="5" BorderColor="#000000"/>
+        <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="2" Grid.ColumnSpan="6" Grid.Column="1" Text="Helemaal eens" Clicked="SaveAnswer" x:Name="hlm_eens_pnt"/>
         <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="4" Grid.ColumnSpan="6" Grid.Column="1" Text="Oneens" Clicked="SaveAnswer" x:Name="oneens_pnt"/>
         <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="5" Grid.ColumnSpan="6" Grid.Column="1" Text="Helemaal oneens" Clicked="SaveAnswer" x:Name="hlm_oneens_pnt"/>
 
