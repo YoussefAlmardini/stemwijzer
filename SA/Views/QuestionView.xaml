@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SA.Views.QuestionView.QuestionView"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Question" Grid.Row="0"  Grid.ColumnSpan="3" Grid.Column="2" x:Name="Stand"/>
+
+        <Button Text="Eens" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Clicked="SaveAnswer" x:Name="eens_pnt" BorderWidth="2" BorderRadius="5" BorderColor="#000000"/>
+        <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" Text="Helemaal eens" Clicked="SaveAnswer" x:Name="hlm_eens_pnt"/>
+        <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="1" Text="Oneens" Clicked="SaveAnswer" x:Name="oneens_pnt"/>
+        <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="1" Text="Helemaal oneens" Clicked="SaveAnswer" x:Name="hlm_oneens_pnt"/>
+
+        <Button Text="Vorige"    Grid.Row="5" Grid.ColumnSpan="1" Grid.Column="1" Clicked="ViewPreviousQuestion"/>
+        <Button Text="Volgende"   x:Name="volgende" Grid.Row="5" Grid.ColumnSpan="1" Grid.Column="3" Clicked="ViewNextQuestion"/>
+
+    </Grid>
+</ContentPage>
