@@ -4,12 +4,38 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="SA.Views.ResultsView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="SA.Views.ResultsView"
+             NavigationPage.HasNavigationBar="false"
+            >
+   
+        <ContentPage.Content>
+                <StackLayout BackgroundColor="PowderBlue">
+                    <Label Text="Op basis van uw antwoorden" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" Opacity="50" FontFamily="Malgun Gothic" FontSize="20" Margin="0,50,0,0"/>
+                <StackLayout Orientation="Horizontal">
+                        <Label Text="Uw beste keuze" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                        <Label Text="Partij1" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Partij naam" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                        <Label Text="Partijleider" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                             <Image Source="" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Zetels tweedekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                            <Label Text="Zetels eerstekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Match" HorizontalOptions="Start" Margin="0,0,20,0"></Label>
+                    <ProgressBar Margin="0,0,20,0"></ProgressBar>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Opnieuw beginnen" BackgroundColor="#6CB419" Margin="20,0,20,0" ></Button>
+                <Button Text="Advies via e-mail" BackgroundColor="#6CB419" Margin="20,0,20,0"></Button>
+            </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+            
+        </ContentPage.Content>
+
 </ContentPage>
