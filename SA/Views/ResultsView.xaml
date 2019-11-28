@@ -11,25 +11,67 @@
         <ContentPage.Content>
                 <StackLayout BackgroundColor="PowderBlue">
                     <Label Text="Op basis van uw antwoorden" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" Opacity="50" FontFamily="Malgun Gothic" FontSize="20" Margin="0,50,0,0"/>
+                
                 <StackLayout Orientation="Horizontal">
                         <Label Text="Uw beste keuze" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
-                        <Label Text="Partij1" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                        <Label x:Name="Partij1" Text="Partij1" HorizontalOptions="End" Margin="0,0,20,0"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Partij naam" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
-                        <Label Text="Partijleider" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                        <Label x:Name="Partij1_name" Text="Partij naam" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                        <Label x:Name="Partij1_leader" Text="Partijleider" HorizontalOptions="End" Margin="0,0,20,0"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                              <Image Source="" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
                         <StackLayout Orientation="Vertical">
-                            <Label Text="Zetels tweedekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
-                            <Label Text="Zetels eerstekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                            <Label x:Name="Partij1_parlement_chairs" Text="Zetels tweedekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                            <Label x:Name="Partij1_senatechairs" Text="Zetels eerstekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
                         </StackLayout>
                     </StackLayout>
                 <StackLayout Orientation="Vertical">
                     <Label Text="Match" HorizontalOptions="Start" Margin="0,0,20,0"></Label>
                     <ProgressBar Margin="0,0,20,0"></ProgressBar>
                 </StackLayout>
+                    
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="2de: " HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                    <Label x:Name="Partij2" Text="Partij1" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="Partij2_name" Text="Partij naam" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                    <Label x:Name="Partij2_leader" Text="Partijleider" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                            <Image Source="" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label x:Name="Partij2_parlement_chairs" Text="Zetels tweedekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                        <Label x:Name="Partij2_senatechairs" Text="Zetels eerstekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    </StackLayout>
+                </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Match" HorizontalOptions="Start" Margin="0,0,20,0"></Label>
+                <ProgressBar Margin="0,0,20,0"></ProgressBar>
+            </StackLayout>
+                    
+            <StackLayout Orientation="Horizontal">
+                    <Label Text="3de: " HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                    <Label x:Name="Partij3" Text="Partij1" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="Partij3_name" Text="Partij naam" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                    <Label x:Name="Partij3_leader" Text="Partijleider" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                            <Image Source="" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label x:Name="Partij3_parlement_chairs" Text="Zetels tweedekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                        <Label x:Name="Partij3_senatechairs" Text="Zetels eerstekamer" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    </StackLayout>
+                </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Match" HorizontalOptions="Start" Margin="0,0,20,0"></Label>
+                <ProgressBar Margin="0,0,20,0"></ProgressBar>
+            </StackLayout>
+                    
             <StackLayout Orientation="Horizontal">
                 <Button Text="Opnieuw beginnen" BackgroundColor="#6CB419" Margin="20,0,20,0" ></Button>
                 <Button Text="Advies via e-mail" BackgroundColor="#6CB419" Margin="20,0,20,0"></Button>

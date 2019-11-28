@@ -32,7 +32,7 @@ namespace SA.Views
             this.__user = user;
             this.__partiesStandPoints = partiesStandPoints;
             List<Party> parties = this.GetAdvice();
-            var test = parties;
+            this.ShowAdvice(parties);
         }
 
         private List<Party> GetAdvice()
@@ -72,6 +72,13 @@ namespace SA.Views
             }
 
            return parties;
+        }
+
+        private void ShowAdvice(List<Party> parties)
+        {
+            var sortedParties = parties.OrderBy(party => party.adviced_percentage).ToList();
+            sortedParties.Reverse();
+            //TODO PRINT PARTIES <XAML>
         }
     }
 }
