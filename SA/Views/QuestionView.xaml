@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SA.Views.QuestionView.QuestionView"
-             BackgroundColor="#4269C3">
+             BackgroundColor="#4269C3"
+             NavigationPage.HasNavigationBar="false">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
