@@ -78,7 +78,26 @@ namespace SA.Views
         {
             var sortedParties = parties.OrderBy(party => party.adviced_percentage).ToList();
             sortedParties.Reverse();
-            //TODO PRINT PARTIES <XAML>
+
+            //Set values best adviced party          
+            Partij1_name.Text = sortedParties[0].name;
+            Partij1_abbreviation.Text += sortedParties[0].abbreviation;
+            Partij1_leader.Text += sortedParties[0].leader;
+            Partij1_parlement_chairs.Text += sortedParties[0].parlement_chairs;
+            Partij1_senatechairs.Text += sortedParties[0].senate_chairs;
+            //Set values second adviced party
+            Partij2_name.Text = sortedParties[1].name;
+            Partij2_abbreviation.Text += sortedParties[1].abbreviation;
+            Partij2_leader.Text += sortedParties[1].leader;
+            Partij2_parlement_chairs.Text += sortedParties[1].parlement_chairs;
+            Partij2_senatechairs.Text += sortedParties[1].senate_chairs;
+
+            //Set values third adviced party
+            Partij3_name.Text = sortedParties[2].name;
+            Partij3_abbreviation.Text += sortedParties[2].abbreviation;
+            Partij3_leader.Text += sortedParties[2].leader;
+            Partij3_parlement_chairs.Text += sortedParties[2].parlement_chairs;
+            Partij3_senatechairs.Text += sortedParties[2].senate_chairs;
         }
     }
 }
