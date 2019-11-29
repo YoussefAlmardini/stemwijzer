@@ -94,7 +94,6 @@ namespace SA.Views
             var sortedParties = parties.OrderBy(party => party.adviced_percentage).ToList();
             sortedParties.Reverse();
 
-
             //Set values best adviced party          
             Partij1_name.Text = sortedParties[0].name;
             Partij1_abbreviation.Text += sortedParties[0].abbreviation;
@@ -102,9 +101,6 @@ namespace SA.Views
             Partij1_parlement_chairs.Text += sortedParties[0].parlement_chairs;
             Partij1_senatechairs.Text += sortedParties[0].senate_chairs;
             Partij1_percentage.Text += sortedParties[0].adviced_percentage + "%";
-
-            Partij1_image.Source = "";
-            Partij1_image.Source = ImageSource.FromUri(new Uri("{local:ImageResource ResourceID=SA.Images." + sortedParties[0].abbreviation + ".png}"));
             //Set values second adviced party
             Partij2_name.Text = sortedParties[1].name;
             Partij2_abbreviation.Text += sortedParties[1].abbreviation;

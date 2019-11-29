@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:local="clr-namespace:SA.Models"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SA.Views.ResultsView"
@@ -25,7 +24,7 @@
                 <Label x:Name="Partij1_leader" Text="Partijleider: " TextColor="White" HorizontalOptions="End" Margin="0,0,20,0"></Label>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Image Source="" x:Name="Partij1_image" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <Image Source="" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
                 <StackLayout Orientation="Vertical">
                     <Label x:Name="Partij1_parlement_chairs" TextColor="White" Text="Zetels tweedekamer: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
                     <Label x:Name="Partij1_senatechairs" TextColor="White" Text="Zetels eerstekamer: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
