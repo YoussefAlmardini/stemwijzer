@@ -36,7 +36,7 @@
         <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="4" Grid.ColumnSpan="6" Grid.Column="1" Text="Oneens" Clicked="SaveAnswer" x:Name="oneens_pnt"/>
         <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="5" Grid.ColumnSpan="6" Grid.Column="1" Text="Helemaal oneens" Clicked="SaveAnswer" x:Name="hlm_oneens_pnt"/>
 
-        <Button Text="Vorige"    Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="1" Clicked="ViewPreviousQuestion" CornerRadius="25"/>
-        <Button Text="Volgende"   x:Name="volgende" Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="5" Clicked="ViewNextQuestion" CornerRadius="25"/>
+        <Button Text="Vorige" Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="1" Clicked="ViewPreviousQuestion" CornerRadius="25"/>
+        <Button Text="Volgende" x:Name="volgende" Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="5" Clicked="ViewNextQuestion" CornerRadius="25"/>
     </Grid>
 </ContentPage>

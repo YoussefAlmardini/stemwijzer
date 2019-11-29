@@ -109,7 +109,7 @@ namespace SA.Views.QuestionView
                 }
                 else
                 {
-                    DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
+                    await DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
                 }
                
             }
@@ -129,7 +129,7 @@ namespace SA.Views.QuestionView
                 }
                 else
                 {
-                    DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
+                    await DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
                 }
             }
 

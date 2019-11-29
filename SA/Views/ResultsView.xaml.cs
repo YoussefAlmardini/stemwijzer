@@ -1,4 +1,5 @@
-﻿using SA.Models;
+﻿using SA.Controllers;
+using SA.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,22 @@ namespace SA.Views
         {
             InitializeComponent();
             InitializeData(user, partiesStandPoints);
+            Reset.Clicked += Reset_Clicked;
+            Mail.Clicked += Mail_Clicked;
+
         }
 
+        private void Mail_Clicked(object sender, EventArgs e)
+        {
+            List<Stand> liveStands = StandController.GetStands();
+            Navigation.PushAsync(new MailView());
+        }
+
+        private void Reset_Clicked(object sender, EventArgs e)
+        {
+            List<Stand> liveStands = StandController.GetStands();
+            Navigation.PushAsync(new MainPage());
+        }
 
         private void InitializeData(User user, List<Standpoints> partiesStandPoints)
         {

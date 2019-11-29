@@ -8,9 +8,11 @@
              mc:Ignorable="d"
              Title="Stemwijzer"
              x:Class="SA.MainPage"
-             BackgroundColor="#4269C3">
-            
-            <!-- <ContentPage.Resources>
+             BackgroundColor="#4269C3"
+             NavigationPage.HasNavigationBar="false">
+
+
+    <!-- <ContentPage.Resources>
                 <ResourceDictionary>
                     <converters:ImageConverter x:Key="ImageConverter" />
                 </ResourceDictionary>
@@ -54,7 +56,7 @@
                 Grid.Column="2"
                 Grid.ColumnSpan="2"
                 Text="Stemwijzer"
-            HorizontalOptions="Center"
+                HorizontalOptions="Center"
                 
                 TextColor="White" 
                 FontSize="20" Scale="1" MaxLines="1" LineBreakMode="NoWrap" HorizontalTextAlignment="Center" FontAttributes="Bold"
