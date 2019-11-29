@@ -68,7 +68,7 @@
             />
         <Image 
 
-            Source="{local:ImageResource ResourceID=SA.Images.pvda.png}"
+            Source="{local:ImageResource ResourceID=SA.Images.PvdA.png}"
             Grid.Row="5" Grid.Column="4" Scale="1.5"
 
             />
