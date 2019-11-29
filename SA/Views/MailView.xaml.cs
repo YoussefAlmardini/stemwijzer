@@ -21,8 +21,8 @@ namespace SA.Views
         string host = "smtp.gmail.com";
         int port = 587;
         bool enableSsl = true;
-        string credentialUsername = "ertanarslan9101@gmail.com";
-        string credentialPassword = "KravatIleYelek)!@$"; // Wachtwoord
+        string credentialUsername = "stemwijzerpolitiekepartij@gmail.com";
+        string credentialPassword = "ScRuMgRoEp15@$$";
         public MailView()
         {
             InitializeComponent();
