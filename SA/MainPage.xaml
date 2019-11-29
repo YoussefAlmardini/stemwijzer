@@ -64,22 +64,24 @@
                 />
         <!--GRID ROW 1-->
         <Image 
-            Source="{local:ImageResource ResourceID=SA.Images.fvd.png}"
+            Source="{local:ImageResource ResourceID=SA.Images.FvD.png}"
             Grid.Row="3" Grid.Column="1" Scale="2"
             />
         <Image
-            Source="{local:ImageResource ResourceID=SA.Images.cda.png}"
+            Source="{local:ImageResource ResourceID=SA.Images.CDA.png}"
             Grid.Row="3" Grid.Column="4" Scale="1.3"
             />
         <!--GRID ROW 2-->
         <!-- Put a function to check off the checkbox is checked CheckedChanged=""  -->
         <Image 
-            Source="{local:ImageResource ResourceID=SA.Images.groenlinks.png}"
+            Source="{local:ImageResource ResourceID=SA.Images.GL.png}"
             Grid.Row="5" Grid.Column="1" Scale="2"
             />
         <Image 
+
             Source="{local:ImageResource ResourceID=SA.Images.pvda.png}"
             Grid.Row="5" Grid.Column="4" Scale="1.5"
+
             />
         <!--GRID ROW 3-->
         <StackLayout Grid.Row="7" Grid.ColumnSpan="6" HorizontalOptions="Center" Orientation="Horizontal">
