@@ -67,8 +67,10 @@
             Grid.Row="5" Grid.Column="1" Scale="2"
             />
         <Image 
-            Source="{local:ImageResource ResourceID=SA.Images.PvdA.png}"
-            Grid.Row="5" Grid.Column="4" Scale="2.1"
+
+            Source="{local:ImageResource ResourceID=SA.Images.pvda.png}"
+            Grid.Row="5" Grid.Column="4" Scale="1.5"
+
             />
         <!--GRID ROW 3-->
         <StackLayout Grid.Row="7" Grid.ColumnSpan="6" HorizontalOptions="Center" Orientation="Horizontal">
