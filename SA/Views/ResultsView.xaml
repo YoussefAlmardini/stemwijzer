@@ -31,8 +31,8 @@
                     <ProgressBar Margin="0,0,20,0"></ProgressBar>
                 </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Opnieuw beginnen" BackgroundColor="#6CB419" Margin="20,0,20,0" ></Button>
-                <Button Text="Advies via e-mail" BackgroundColor="#6CB419" Margin="20,0,20,0"></Button>
+                <Button Text="Opnieuw beginnen" x:Name="Reset" BackgroundColor="#6CB419" Margin="20,0,20,0" ></Button>
+                <Button Text="Advies via e-mail" x:Name="Mail" BackgroundColor="#6CB419" Margin="20,0,20,0"></Button>
             </StackLayout>
         </StackLayout>
             
