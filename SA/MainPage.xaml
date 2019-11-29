@@ -11,13 +11,6 @@
              BackgroundColor="#4269C3"
              NavigationPage.HasNavigationBar="false">
 
-
-    <!-- <ContentPage.Resources>
-                <ResourceDictionary>
-                    <converters:ImageConverter x:Key="ImageConverter" />
-                </ResourceDictionary>
-            </ContentPage.Resources> -->
-
     <!-- // Set a grid with heigt and width -->
     <Grid>
         <Grid.RowDefinitions>
@@ -43,10 +36,7 @@
         </Grid.ColumnDefinitions>
         <!-- Place new controls here -->
         <!--GRID ROW 0-->
-        <!-- <Image 
-            Source="{Binding Icon_map-political, Converter={StaticResource ImageFileToImageSourceConverter}}" 
-            Grid.Row="0" Grid.Column="0"
-            /> -->
+        
         <Image 
             Source="{local:ImageResource ResourceID=SA.Images.Icon_map-political.png}"
             Grid.Row="1" Grid.Column="2" Scale="2" Grid.ColumnSpan="2"
@@ -72,7 +62,6 @@
             Grid.Row="3" Grid.Column="4" Scale="1.3"
             />
         <!--GRID ROW 2-->
-        <!-- Put a function to check off the checkbox is checked CheckedChanged=""  -->
         <Image 
             Source="{local:ImageResource ResourceID=SA.Images.GL.png}"
             Grid.Row="5" Grid.Column="1" Scale="2"

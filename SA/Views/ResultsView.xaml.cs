@@ -103,8 +103,7 @@ namespace SA.Views
             Partij1_senatechairs.Text += sortedParties[0].senate_chairs;
             Partij1_percentage.Text += sortedParties[0].adviced_percentage + "%";
 
-            Partij1_image.Source = "";
-            Partij1_image.Source = ImageSource.FromUri(new Uri("{local:ImageResource ResourceID=SA.Images." + sortedParties[0].abbreviation + ".png}"));
+            Partij1_image.Source = ("{local:ImageResource ResourceID=SA.Images." + sortedParties[0].abbreviation + ".png}");
             //Set values second adviced party
             Partij2_name.Text = sortedParties[1].name;
             Partij2_abbreviation.Text += sortedParties[1].abbreviation;

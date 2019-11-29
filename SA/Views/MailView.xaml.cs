@@ -23,7 +23,7 @@ namespace SA.Views
         private void Back_Clicked(object sender, EventArgs e)
         {
             List<Stand> liveStands = StandController.GetStands();
-            Navigation.PushAsync(new ResultsView());
+            Navigation.PopAsync();
         }
     }
 }
