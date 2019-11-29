@@ -13,12 +13,12 @@ namespace SA
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new ResultsView());
+            MainPage = new NavigationPage(new MailView());
         }
         public App(string pathName)
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new ResultsView());
+            MainPage = new NavigationPage(new MailView());
         }
 
         protected override void OnStart()

@@ -60,7 +60,7 @@ namespace SA.Views.QuestionView
 
         private void SaveAdvice()
         {
-            Navigation.PushAsync(new ResultsView(User));
+            //Navigation.PushAsync(new ResultsView(User));
         }
 
         private void SetAnswer(string answer,UserOpinion op)

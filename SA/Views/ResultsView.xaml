@@ -7,12 +7,6 @@
              x:Class="SA.Views.ResultsView">
     <ContentPage.Content>
         <StackLayout>
-            <Button
-                Text="Mail mij het advies"
-                Grid.Column="2" Grid.Row="4"  Grid.ColumnSpan="1" BackgroundColor="#6CB419"
-                CornerRadius="25"
-                Clicked="mailAdvice"
-            />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
