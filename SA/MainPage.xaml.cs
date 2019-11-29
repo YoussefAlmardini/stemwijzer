@@ -14,9 +14,12 @@ namespace SA
     public partial class MainPage : ContentPage
     {
         User user = new User();
+        List<Stand> liveStands;
+        List<Standpoints> PartiesStandPoints;
         public MainPage()
         {
             InitializeComponent();
+            InitilizeData();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -24,14 +27,23 @@ namespace SA
      
             if (user.IsAdult)
             {
-                List<Stand> liveStands = StandController.GetStands();
-                Navigation.PushAsync(new QuestionView(liveStands, user));
-
+                if(liveStands == null || PartiesStandPoints == null)
+                {
+                    DisplayAlert("Connectie error", "Er is een verbinding met een netwerk nodig!", "Oké");
+                    InitilizeData();
+                }
+                else Navigation.PushAsync(new QuestionView(liveStands, user, PartiesStandPoints));
             }
             else
             {
                 DisplayAlert("", "U moet minimaal 16 jaar zijn", "Oké");
             }
+        }
+
+        private void InitilizeData()
+        {
+            liveStands = StandController.GetStands();
+            PartiesStandPoints = StandPointsController.GetStandPoints();
         }
 
         private void OnCheck(object sender, CheckedChangedEventArgs e)
