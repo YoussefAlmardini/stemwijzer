@@ -14,8 +14,8 @@
             </StackLayout>
             <Label Text="Advies via email" HorizontalOptions="Center" VerticalOptions="Start" TextColor="white" Opacity="50" FontFamily="Malgun Gothic" FontSize="20"/>
             <Label Text="Wij versturen hier uw resultaten naar uw email." HorizontalOptions="CenterAndExpand" Margin="20,200,0,0" TextColor="White" Opacity="50" FontFamily="Malgun Gothic" FontSize="20"/>
-            <Entry Placeholder="Vul uw email-adres hier in." HorizontalOptions="CenterAndExpand" BackgroundColor="PowderBlue" VerticalOptions="End" HorizontalTextAlignment="Center" Margin="0" FontFamily="Malgun Gothic" x:Name="emailValue" />
-            <Button Text="Verzenden" BackgroundColor="#6CB419" CornerRadius="25" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Padding="100,0" Margin="0,0,0,200" FontFamily="Malgun Gothic" Clicked="mailAdvice" />
+            <Entry Placeholder="Vul uw email-adres hier in." HorizontalOptions="CenterAndExpand" BackgroundColor="PowderBlue" VerticalOptions="End" HorizontalTextAlignment="Center" Margin="0" FontFamily="Malgun Gothic" x:Name="email_address" />
+            <Button Text="Verzenden" BackgroundColor="#6CB419" CornerRadius="25" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Padding="100,0" Margin="0,0,0,200" FontFamily="Malgun Gothic" Clicked="requestMailRequest" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

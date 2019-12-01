@@ -5,85 +5,36 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Net;
-using System.Net.Mail;
-using System.IO;
-using System.Configuration;
-using System.Web;
-using System.Reflection;
+using RestSharp;
 
 namespace SA.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MailView : ContentPage
     {
-        SmtpClient client = new SmtpClient();
-        string host = "smtp.gmail.com";
-        int port = 587;
-        bool enableSsl = true;
-        string credentialUsername = "stemwijzerpolitiekepartij@gmail.com";
-        string credentialPassword = "ScRuMgRoEp15@$$";
         public MailView()
         {
             InitializeComponent();
-            initSMTPClient(host, port, enableSsl, credentialUsername, credentialPassword);
         }
 
-        private bool initSMTPClient(string host, int port, bool enableSsl, string credentialUsername, string credentialPassword)
+        private void requestMailRequest(Object sender, EventArgs e)
         {
-            try
-            {
-                client.Host = host;
-                client.Port = port;
-                client.EnableSsl = enableSsl;
-                client.Credentials = new NetworkCredential(credentialUsername, credentialPassword);
-                client.SendCompleted += Client_SendCompleted;
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            sendMailRequest(email_address.Text, "Partij 1", "Partij 2", "Partij 3", 62, 28, 10);
         }
 
-        private void mailAdvice(object sender, EventArgs e)
+        private void sendMailRequest(string receiver_email, string party1, string party2, string party3, int percentageParty1, int percentageParty2, int percentageParty3)
         {
-            try
+            if (receiver_email != null)
             {
-                MailMessage msg = new MailMessage();
-                msg.To.Add(emailValue.Text);
-                msg.Subject = "Uw stemadvies";
-                msg.IsBodyHtml = true;
-                msg.Body = PopulateBody();
-                msg.From = new MailAddress("ertanarslan9101@gmail.com");
-                client.SendMailAsync(msg);
+                var client = new RestClient("http://192.168.2.4/opleiding/jaar3/lvl10/Stemwijzer/index.php/");
+                var request = new RestRequest("?email_address=" + receiver_email + "&party1=" + party1 + "&party2=" + party2 + "&party3=" + party3 + "&percentageParty1=" + percentageParty1.ToString() + "&percentageParty2=" + percentageParty2.ToString() + "&percentageParty3=" + percentageParty3.ToString(), Method.GET);
+                IRestResponse response = client.Execute(request);
+                DisplayAlert("Melding", "U heeft de e-mail aangevraagd, binnen enkele ogenblikken ontvangt u deze.", "OK");
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("CATCH: " + ex.Message);
+                DisplayAlert("Melding", "U heeft geen e-mailadres ingevoerd!", "OK");
             }
-        }
-
-        private void Client_SendCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            DisplayAlert("Melding", "De e-mail is verzonden", "OK");
-        }
-
-        private string PopulateBody()
-        {
-           /* foreach (string res in System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames())
-            {
-                Console.WriteLine(res);
-            }*/
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "SA.Views.E_mail_templates.mailAdvice.html";
-
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                return reader.ReadToEnd();
-            }
-            // return File.ReadAllText(@"../E-mail templates/mailAdvice.html");
         }
     }
 }
