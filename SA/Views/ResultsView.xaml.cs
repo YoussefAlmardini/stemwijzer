@@ -101,24 +101,31 @@ namespace SA.Views
             Partij1_leader.Text += sortedParties[0].leader;
             Partij1_parlement_chairs.Text += sortedParties[0].parlement_chairs;
             Partij1_senatechairs.Text += sortedParties[0].senate_chairs;
-            Partij1_percentage.Text += sortedParties[0].adviced_percentage + "%";
-
-            Partij1_image.Source = "";
-            Partij1_image.Source = ImageSource.FromUri(new Uri("{local:ImageResource ResourceID=SA.Images." + sortedParties[0].abbreviation + ".png}"));
+            Partij1_percentage_txt.Text += sortedParties[0].adviced_percentage + "%";
+            decimal p1 = sortedParties[0].adviced_percentage;
+            double progressbar1 = (double)p1;
+            Partij1_percentage.Progress += progressbar1;
+            Partij1_image.Source += ("{local:ImageResource ResourceID=SA.Images." + sortedParties[0].abbreviation + ".png}");
             //Set values second adviced party
             Partij2_name.Text = sortedParties[1].name;
             Partij2_abbreviation.Text += sortedParties[1].abbreviation;
             Partij2_leader.Text += sortedParties[1].leader;
             Partij2_parlement_chairs.Text += sortedParties[1].parlement_chairs;
             Partij2_senatechairs.Text += sortedParties[1].senate_chairs;
-            Partij2_percentage.Text += sortedParties[1].adviced_percentage + "%";
+            Partij2_percentage_txt.Text += sortedParties[1].adviced_percentage + "%";
+            decimal p2 = sortedParties[1].adviced_percentage;
+            double progressbar2 = (double)p2;
+            Partij2_percentage.Progress += progressbar2;
             //Set values third adviced party
             Partij3_name.Text = sortedParties[2].name;
             Partij3_abbreviation.Text += sortedParties[2].abbreviation;
             Partij3_leader.Text += sortedParties[2].leader;
             Partij3_parlement_chairs.Text += sortedParties[2].parlement_chairs;
             Partij3_senatechairs.Text += sortedParties[2].senate_chairs;
-            Partij3_percentage.Text += sortedParties[2].adviced_percentage + "%";
+            Partij3_percentage_txt.Text += sortedParties[2].adviced_percentage + "%";
+            decimal p3 = sortedParties[2].adviced_percentage;
+            double progressbar3 = (double)p3;
+            Partij3_percentage.Progress += progressbar3;
         }
     }
 }
