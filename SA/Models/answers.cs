@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace SA.Models
 {
-    public class Opinion
+    public class Answer
     {
-
-        public int ID { set; get; }
-        public string opinion { set; get; }
+        
     }
+
+
 }

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:SA.Models"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SA.Views.ResultsView"
+             BackgroundColor="#4269C3"
+             NavigationPage.HasNavigationBar="false"
+            >
+   
+        <ContentPage.Content>
+        <StackLayout >
+                    <Label Text="Op basis van uw antwoorden" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" Opacity="50" FontFamily="Malgun Gothic" FontSize="20" Margin="0,20,0,0"/>
+                    <ProgressBar ProgressColor="Green"></ProgressBar>
+
+            <StackLayout Orientation="Horizontal" Padding="0,30,0,0">
+                <Label Text="Uw beste keuze" TextColor="White" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <Label x:Name="Partij1_name" TextColor="White" Text="Partij1" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="Partij1_abbreviation" Text="Partij: " TextColor="White" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <Label x:Name="Partij1_leader" Text="Partijleider: " TextColor="White" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="" x:Name="Partij1_image" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="Partij1_parlement_chairs" TextColor="White" Text="Zetels tweedekamer: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    <Label x:Name="Partij1_senatechairs" TextColor="White" Text="Zetels eerstekamer: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="Partij1_percentage_txt" Text="Match percentage: " TextColor="White" HorizontalOptions="Start" Margin="20,0,20,0"></Label>
+                <ProgressBar x:Name="Partij1_percentage"  ProgressColor="Green" ></ProgressBar>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="2de: " TextColor="White" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <Label x:Name="Partij2_name" TextColor="White" Text="Partij2" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="Partij2_abbreviation" TextColor="White" Text="Partij: " HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <Label x:Name="Partij2_leader" TextColor="White" Text="Partijleider: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="Partij2_parlement_chairs" TextColor="White" Text="Zetels tweedekamer: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    <Label x:Name="Partij2_senatechairs" TextColor="White" Text="Zetels eerstekamer: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="Partij2_percentage_txt" TextColor="White" Text="Match percentage: " HorizontalOptions="Start" Margin="20,0,20,0"></Label>
+                <ProgressBar x:Name="Partij2_percentage" ProgressColor="Green"></ProgressBar>
+            </StackLayout>
+                    
+            <StackLayout Orientation="Horizontal">
+                <Label Text="3de: " TextColor="White" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <Label x:Name="Partij3_name" TextColor="White" Text="Partij3" HorizontalOptions="End" Margin="0,0,20,0"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="Partij3_abbreviation" TextColor="White" Text="Partij: " HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <Label x:Name="Partij3_leader" TextColor="White" Text="Partijleider: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="Partij3_parlement_chairs" TextColor="White" Text="Zetels tweedekamer: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                    <Label x:Name="Partij3_senatechairs" TextColor="White" Text="Zetels eerstekamer: " HorizontalOptions="End" Margin="0,0,20,0"></Label>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="Partij3_percentage_txt" TextColor="White" Text="Match percentage: " HorizontalOptions="Start" Margin="20,0,20,0"></Label>
+                <ProgressBar x:Name="Partij3_percentage" ProgressColor="Green"></ProgressBar>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button Text="Opnieuw beginnen" HorizontalOptions="StartAndExpand" x:Name="Reset" BackgroundColor="#6CB419" Margin="20,0,20,0"  BorderColor="Black" BorderWidth="1"></Button>
+                <Button Text="Advies via e-mail" HorizontalOptions="EndAndExpand" x:Name="Mail" BackgroundColor="#6CB419" Margin="20,0,20,0"  BorderColor="Black" BorderWidth="1"></Button>
+            </StackLayout>
+        </StackLayout>
+            
+        </ContentPage.Content>
+
+</ContentPage>

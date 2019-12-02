@@ -2,20 +2,68 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Stemwijzer 2019</AssemblyName>
+    <ApplicationIcon></ApplicationIcon>
+    <Win32Resource />
+    <RootNamespace>Stemwijzer 2019</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <DefineConstants>TRACE</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="view\**" />
+    <EmbeddedResource Remove="view\**" />
+    <None Remove="view\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\opinion.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\cda.png" />
+    <None Remove="Images\fvd.png" />
+    <None Remove="Images\gl.png" />
+    <None Remove="Images\Icon_map-political.png" />
+    <None Remove="Images\pvda.png" />
+    <None Remove="Views\E-mail templates\mailAdvice.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\CDA.png" />
+    <EmbeddedResource Include="Images\FvD.png" />
+    <EmbeddedResource Include="Images\GL.png" />
+    <EmbeddedResource Include="Images\Icon_map-political.png" />
+    <EmbeddedResource Include="Images\PvdA.png" />
+    <EmbeddedResource Include="Views\E-mail templates\mailAdvice.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveXAML" Version="2.1.73" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+    <EmbeddedResource Update="Views\MailView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\QuestionView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ResultsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
