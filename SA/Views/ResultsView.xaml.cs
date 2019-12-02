@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Net;
+using System.Net.Mail;
 
 namespace SA.Views
 {
@@ -33,7 +34,12 @@ namespace SA.Views
         private void Mail_Clicked(object sender, EventArgs e)
         {
             List<Stand> liveStands = StandController.GetStands();
-            Navigation.PushAsync(new MailView());
+
+            List<Party> parties = this.GetAdvice();
+            var sortedParties = parties.OrderBy(party => party.adviced_percentage).ToList();
+            sortedParties.Reverse();
+
+            Navigation.PushAsync(new MailView(sortedParties));
         }
 
         private void Reset_Clicked(object sender, EventArgs e)

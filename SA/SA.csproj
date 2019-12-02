@@ -31,6 +31,7 @@
     <None Remove="Images\gl.png" />
     <None Remove="Images\Icon_map-political.png" />
     <None Remove="Images\pvda.png" />
+    <None Remove="Views\E-mail templates\mailAdvice.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,11 +40,15 @@
     <EmbeddedResource Include="Images\GL.png" />
     <EmbeddedResource Include="Images\Icon_map-political.png" />
     <EmbeddedResource Include="Images\PvdA.png" />
+    <EmbeddedResource Include="Views\E-mail templates\mailAdvice.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveXAML" Version="2.1.73" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
