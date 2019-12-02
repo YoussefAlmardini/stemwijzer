@@ -76,8 +76,8 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
-                <Button Text="Opnieuw beginnen" x:Name="Reset" BackgroundColor="#6CB419" Margin="20,0,20,0" Scale="1.4" BorderColor="Black" BorderWidth="1"></Button>
-                <Button Text="Advies via e-mail" x:Name="Mail" BackgroundColor="#6CB419" Margin="35,0,20,0" Scale="1.4" BorderColor="Black" BorderWidth="1"></Button>
+                <Button Text="Opnieuw beginnen" HorizontalOptions="StartAndExpand" x:Name="Reset" BackgroundColor="#6CB419" Margin="20,0,20,0"  BorderColor="Black" BorderWidth="1"></Button>
+                <Button Text="Advies via e-mail" HorizontalOptions="EndAndExpand" x:Name="Mail" BackgroundColor="#6CB419" Margin="20,0,20,0"  BorderColor="Black" BorderWidth="1"></Button>
             </StackLayout>
         </StackLayout>
             

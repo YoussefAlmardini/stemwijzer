@@ -5,13 +5,14 @@
     <AssemblyName>Stemwijzer 2019</AssemblyName>
     <ApplicationIcon></ApplicationIcon>
     <Win32Resource />
+    <RootNamespace>Stemwijzer 2019</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <DefineConstants>TRACE</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>

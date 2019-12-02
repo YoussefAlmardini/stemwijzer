@@ -101,7 +101,7 @@ namespace SA.Views.QuestionView
             {
                 if (IsAnswerd)
                 {
-                    var confirm = await DisplayAlert("sure", "wil jij doorgaan?", "ja zeker", "cancel");
+                    var confirm = await DisplayAlert("Uitslag", "Weet u zeker dat u wilt doorgaan?", "Ga verder", "Terug");
                     if (confirm)
                     {
                         this.SaveAdvice();
