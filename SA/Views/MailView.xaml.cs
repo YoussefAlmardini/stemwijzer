@@ -14,10 +14,17 @@ namespace SA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MailView : ContentPage
     {
+        List<Party> top3Parties = new List<Party>();
         public MailView()
         {
             InitializeComponent();
             Back.Clicked += Back_Clicked;
+        }
+
+        public MailView(List<Party> sortedParties)
+        {
+            InitializeComponent();
+            top3Parties = sortedParties;
         }
 
         private void Back_Clicked(object sender, EventArgs e)
@@ -28,10 +35,18 @@ namespace SA.Views
 
         private void requestMailRequest(Object sender, EventArgs e)
         {
-            sendMailRequest(email_address.Text, "Partij 1", "Partij 2", "Partij 3", 62, 28, 10);
+            string partyName1 = top3Parties[0].name;
+            string partyName2 = top3Parties[1].name;
+            string partyName3 = top3Parties[2].name;
+
+            string partyA1 = top3Parties[0].adviced_percentage.ToString();
+            string partyA2 = top3Parties[1].adviced_percentage.ToString();
+            string partyA3 = top3Parties[2].adviced_percentage.ToString();
+
+            sendMailRequest(email_address.Text, partyName1, partyName2, partyName3, partyA1, partyA2, partyA3);
         }
 
-        private void sendMailRequest(string receiver_email, string party1, string party2, string party3, int percentageParty1, int percentageParty2, int percentageParty3)
+        private void sendMailRequest(string receiver_email, string party1, string party2, string party3, string percentageParty1, string percentageParty2, string percentageParty3)
         {
             if (receiver_email != null)
             {
