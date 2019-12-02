@@ -12,10 +12,9 @@
    
         <ContentPage.Content>
         <StackLayout >
-                    <Label Text="Op basis van uw antwoorden" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" Opacity="50" FontFamily="Malgun Gothic" FontSize="20" Margin="0,20,0,0"/>
-                    <ProgressBar ProgressColor="Green"></ProgressBar>
+                    <Label Text="Op basis van uw antwoorden" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" Opacity="50" FontFamily="Malgun Gothic" FontSize="20" Margin="0,50,0,0"/>
 
-            <StackLayout Orientation="Horizontal" Padding="0,30,0,0">
+            <StackLayout Orientation="Horizontal">
                 <Label Text="Uw beste keuze" TextColor="White" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
                 <Label x:Name="Partij1_name" TextColor="White" Text="Partij1" HorizontalOptions="End" Margin="0,0,20,0"></Label>
             </StackLayout>
@@ -32,7 +31,7 @@
             </StackLayout>
             <StackLayout Orientation="Vertical">
                 <Label x:Name="Partij1_percentage_txt" Text="Match percentage: " TextColor="White" HorizontalOptions="Start" Margin="20,0,20,0"></Label>
-                <ProgressBar x:Name="Partij1_percentage"  ProgressColor="Green" ></ProgressBar>
+                <ProgressBar x:Name="Partij1_percentage"  ProgressColor="Green" Margin="0,0,20,0"></ProgressBar>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
@@ -52,7 +51,7 @@
             </StackLayout>
             <StackLayout Orientation="Vertical">
                 <Label x:Name="Partij2_percentage_txt" TextColor="White" Text="Match percentage: " HorizontalOptions="Start" Margin="20,0,20,0"></Label>
-                <ProgressBar x:Name="Partij2_percentage" ProgressColor="Green"></ProgressBar>
+                <ProgressBar x:Name="Partij2_percentage" ProgressColor="Green" Margin="0,0,20,0"></ProgressBar>
             </StackLayout>
                     
             <StackLayout Orientation="Horizontal">
@@ -73,7 +72,7 @@
 
             <StackLayout Orientation="Vertical">
                 <Label x:Name="Partij3_percentage_txt" TextColor="White" Text="Match percentage: " HorizontalOptions="Start" Margin="20,0,20,0"></Label>
-                <ProgressBar x:Name="Partij3_percentage" ProgressColor="Green"></ProgressBar>
+                <ProgressBar x:Name="Partij3_percentage" ProgressColor="Green" Margin="0,0,20,0"></ProgressBar>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
