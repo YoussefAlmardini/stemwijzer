@@ -15,10 +15,16 @@ namespace SA.Views
     public partial class MailView : ContentPage
     {
         List<Party> top3Parties = new List<Party>();
-        public MailView(List<Party> sortedParties)
+        public MailView()
         {
             InitializeComponent();
             Back.Clicked += Back_Clicked;
+        }
+
+        public MailView(List<Party> sortedParties)
+        {
+            InitializeComponent();
+            top3Parties = sortedParties;
         }
 
         private void Back_Clicked(object sender, EventArgs e)
