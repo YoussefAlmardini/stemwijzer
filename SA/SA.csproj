@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Stemwijzer 2019</AssemblyName>
+    <ApplicationIcon></ApplicationIcon>
+    <Win32Resource />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -24,18 +27,18 @@
   <ItemGroup>
     <None Remove="Images\cda.png" />
     <None Remove="Images\fvd.png" />
-    <None Remove="Images\groenlinks.png" />
+    <None Remove="Images\gl.png" />
     <None Remove="Images\Icon_map-political.png" />
     <None Remove="Images\pvda.png" />
     <None Remove="Views\E-mail templates\mailAdvice.html" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\cda.png" />
-    <EmbeddedResource Include="Images\fvd.png" />
-    <EmbeddedResource Include="Images\groenlinks.png" />
+    <EmbeddedResource Include="Images\CDA.png" />
+    <EmbeddedResource Include="Images\FvD.png" />
+    <EmbeddedResource Include="Images\GL.png" />
     <EmbeddedResource Include="Images\Icon_map-political.png" />
-    <EmbeddedResource Include="Images\pvda.png" />
+    <EmbeddedResource Include="Images\PvdA.png" />
     <EmbeddedResource Include="Views\E-mail templates\mailAdvice.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

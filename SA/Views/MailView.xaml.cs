@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SA.Controllers;
+using SA.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,13 @@ namespace SA.Views
         public MailView()
         {
             InitializeComponent();
+            Back.Clicked += Back_Clicked;
+        }
+
+        private void Back_Clicked(object sender, EventArgs e)
+        {
+            List<Stand> liveStands = StandController.GetStands();
+            Navigation.PopAsync();
         }
 
         private void requestMailRequest(Object sender, EventArgs e)

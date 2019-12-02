@@ -5,12 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SA.Views.MailView"
-             BackgroundColor="#4269C3">
+             BackgroundColor="#4269C3"
+             NavigationPage.HasNavigationBar="false">
+
     <ContentPage.Content>
         <StackLayout Spacing="10" x:Name="layout">
             <StackLayout Orientation="Horizontal">
                 <Image Source=""/>
-                <Button Text="Terug"   BackgroundColor="PowderBlue" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="White" Opacity="50" FontFamily="Malgun Gothic"/>
+                <Button Text="Terug" x:Name="Back"  BackgroundColor="PowderBlue" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="White" Opacity="50" FontFamily="Malgun Gothic"/>
             </StackLayout>
             <Label Text="Advies via email" HorizontalOptions="Center" VerticalOptions="Start" TextColor="white" Opacity="50" FontFamily="Malgun Gothic" FontSize="20"/>
             <Label Text="Wij versturen hier uw resultaten naar uw email." HorizontalOptions="CenterAndExpand" Margin="20,200,0,0" TextColor="White" Opacity="50" FontFamily="Malgun Gothic" FontSize="20"/>

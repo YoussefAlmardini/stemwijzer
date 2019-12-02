@@ -13,12 +13,13 @@ namespace SA.Views.QuestionView
     public partial class QuestionView : ContentPage
     {
         public List<Stand> Stands;
+        List<Standpoints> PartiesStandPoints;
         public int indexer = 0;
         public User User;
         bool IsAnswerd = false;
         Color ActiveButtonColor = Color.FromRgb(66, 105, 195);
 
-        public QuestionView(List<Stand> stands,User user)
+        public QuestionView(List<Stand> stands,User user,List<Standpoints> PartiesStandPoints)
         {
             InitializeComponent();
             this.Stands = stands;
@@ -26,6 +27,7 @@ namespace SA.Views.QuestionView
             Stand.Text = Stands[0].stand;
             this.User.Session.Start();
             this.ResetLayout();
+            this.PartiesStandPoints = PartiesStandPoints;
         }
 
         private void SaveAnswer(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace SA.Views.QuestionView
 
         private void SaveAdvice()
         {
-            //Navigation.PushAsync(new ResultsView(User));
+            Navigation.PushAsync(new ResultsView(User, PartiesStandPoints));
         }
 
         private void SetAnswer(string answer,UserOpinion op)
@@ -107,7 +109,7 @@ namespace SA.Views.QuestionView
                 }
                 else
                 {
-                    DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
+                    await DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
                 }
                
             }
@@ -127,7 +129,7 @@ namespace SA.Views.QuestionView
                 }
                 else
                 {
-                    DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
+                    await DisplayAlert("Stelling niet beantwoord", "U heeft nog geen aantwoord gegeven op deze stelling", "Oké");
                 }
             }
 
