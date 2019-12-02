@@ -26,7 +26,8 @@ namespace SA.Views
         {
             if (receiver_email != null)
             {
-                var client = new RestClient("http://192.168.2.4/opleiding/jaar3/lvl10/Stemwijzer/index.php/");
+                var client = new RestClient("http://192.168.43.148/opleiding/jaar3/lvl10/Stemwijzer/index.php/");
+                // var client = new RestClient("http://525889.student4a7.ao-ica.nl/index.php/");
                 var request = new RestRequest("?email_address=" + receiver_email + "&party1=" + party1 + "&party2=" + party2 + "&party3=" + party3 + "&percentageParty1=" + percentageParty1.ToString() + "&percentageParty2=" + percentageParty2.ToString() + "&percentageParty3=" + percentageParty3.ToString(), Method.GET);
                 IRestResponse response = client.Execute(request);
                 DisplayAlert("Melding", "U heeft de e-mail aangevraagd, binnen enkele ogenblikken ontvangt u deze.", "OK");
