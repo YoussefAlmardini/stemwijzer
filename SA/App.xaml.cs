@@ -3,6 +3,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SA.Models;
+using SA.Views;
 
 namespace SA
 {
@@ -22,7 +23,7 @@ namespace SA
 
         protected override void OnStart()
         {
-            
+
         }
 
         protected override void OnSleep()
