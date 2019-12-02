@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              x:Class="SA.Views.QuestionView.QuestionView"
              BackgroundColor="#4269C3"
-             xmlns:local="clr-namespace:SA.Models" 
              NavigationPage.HasNavigationBar="false">
     <Grid>
         <Grid.RowDefinitions>
@@ -16,7 +15,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -37,12 +36,7 @@
         <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="4" Grid.ColumnSpan="6" Grid.Column="1" Text="Oneens" Clicked="SaveAnswer" x:Name="oneens_pnt"/>
         <Button BorderWidth="2" BorderRadius="5" BorderColor="#000000" Grid.Row="5" Grid.ColumnSpan="6" Grid.Column="1" Text="Helemaal oneens" Clicked="SaveAnswer" x:Name="hlm_oneens_pnt"/>
 
-        <Image 
-            Source="{local:ImageResource ResourceID=SA.Images.Icon_map-political.png}"
-            Grid.Row="6" Grid.Column="2" Scale="2" Grid.ColumnSpan="2"
-            />
-
-        <Button Text="Vorige" BackgroundColor="#6CB419" Grid.Row="7" Grid.ColumnSpan="3" Grid.Column="1" Clicked="ViewPreviousQuestion" />
-        <Button Text="Volgende" BackgroundColor="#6CB419" x:Name="volgende" Grid.Row="7" Grid.ColumnSpan="3" Grid.Column="4" Clicked="ViewNextQuestion" />
+        <Button Text="Vorige" Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="1" Clicked="ViewPreviousQuestion" CornerRadius="25"/>
+        <Button Text="Volgende" x:Name="volgende" Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="5" Clicked="ViewNextQuestion" CornerRadius="25"/>
     </Grid>
 </ContentPage>
